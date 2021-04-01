@@ -1,4 +1,4 @@
-import java.util.concurrent.Delayed;
+package bank;
 
 public class BankTest {
   public static final int ACCONTS_NUM = 100;
