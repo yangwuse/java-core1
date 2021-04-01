@@ -1,13 +1,15 @@
 package bank;
 
 public class BankTest {
-  public static final int ACCONTS_NUM = 100;
+  public static final int ACCONTS_NUM = 10;
   public static final double INITIAL_BALANCE = 1000;
   public static final double MAX_AMOUNT = 1000;
   public static final int DELAY = 10;
 
   public static void main(String[] args) {
-    Bank bank = new Bank(ACCONTS_NUM, INITIAL_BALANCE);
+//    Bank bank = new Bank(ACCONTS_NUM, INITIAL_BALANCE);
+//    SynchBank bank = new SynchBank(ACCONTS_NUM, INITIAL_BALANCE);
+    SynchBankTwo bank = new SynchBankTwo(ACCONTS_NUM, INITIAL_BALANCE);
     for (int i = 0; i < ACCONTS_NUM; i++) {
       int fromAccount = i;
       Runnable r = () -> {
