@@ -54,18 +54,31 @@ public class MyLinkedList<E>
 
   private E unlinkFirst(Node<E> f) {
     final E item = f.item;
-    first = f.next;
+    final Node<E> next = f.next;
     f.item = null;
     f.next = null;
-    if (first == null)
+    first = next;
+    if (next == null)
       last = null;
     else
-      first.prev = null;
+      next.prev = null;
     size--;
     return item;
   }
 
-
+  private E unlinkLast(Node<E> l) {
+    final E item = l.item;
+    final Node<E> prev = l.prev;
+    l.item = null;
+    l.prev = null;
+    last = prev;
+    if (prev == null)
+      first = null;
+    else
+      prev.next = null;
+    size--;
+    return item;
+  }
 
   private static class Node<E> {
     E item;
