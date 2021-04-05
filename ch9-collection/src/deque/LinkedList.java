@@ -21,7 +21,6 @@ public class LinkedList<E>
     addAll(c);
   }
 
-
   private void linkFirst(E e) {
     final Node<E> f = first;
     final Node<E> newNode = new Node<>(null, e, f);
