@@ -10,7 +10,6 @@ public class LinkedList<E>
    private int size = 0;
 
    private Node<E> first;
-
    private Node<E> last;
 
   public LinkedList() {
