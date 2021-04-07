@@ -32,7 +32,7 @@ import jdk.internal.misc.SharedSecrets;
  * before adding a large number of elements using the {@code ensureCapacity}
  * operation.  This may reduce the amount of incremental reallocation.
  *
- * <p><strong>Note that this implementation is not synchronized.</strong>
+ * <p><strong>Note that this implementationimplementation is not synchronized.</strong>
  * If multiple threads access an {@code ArrayList} instance concurrently,
  * and at least one of the threads modifies the list structurally, it
  * <i>must</i> be synchronized externally.  (A structural modification is
