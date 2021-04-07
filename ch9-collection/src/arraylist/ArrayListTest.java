@@ -151,6 +151,6 @@ public class ArrayListTest {
 //    boolean b2 = set.contains(p2);
     l1.add(p1);
     l2.add(p2);
-    boolean b3 = l1.equals(l2);
+    boolean b3 = l1.equals(l2); // 在此处断点跟踪调试 会逐级比较对象的每个属性
   }
 }
