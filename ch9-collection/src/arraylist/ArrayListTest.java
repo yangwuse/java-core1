@@ -143,11 +143,14 @@ public class ArrayListTest {
         return Objects.equals(this.id, p.id) && Objects.equals(this.name, p.name);
       }
     }
-    Person p1 = new Person("100", 100);
+    Person p1 = new Person(new String("100"), new Integer(100));
     Person p2 = new Person("100", 100);
-    boolean b = p1.equals(p2);
-    Set<Person> set = new HashSet<>();
-    set.add(p1);
-    boolean b2 = set.contains(p2);
+//    boolean b = p1.equals(p2);
+//    Set<Person> set = new HashSet<>();
+//    set.add(p1);
+//    boolean b2 = set.contains(p2);
+    l1.add(p1);
+    l2.add(p2);
+    boolean b3 = l1.equals(l2);
   }
 }
