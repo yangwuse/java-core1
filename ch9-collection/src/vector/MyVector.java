@@ -84,6 +84,43 @@ public class MyVector<E> {
     return oldElement;
   }
 
+  public boolean remove(Object o) {
+    return removeElement(o);
+  }
+
+  public synchronized boolean removeElement(Object o) {
+    int i = indexOf(o);
+    if (i >= 0) {
+      removeElementAt(i);
+      return true;
+    }
+    return false;
+  }
+
+  public int indexOf(Object o) {
+    return indexOf(o, 0);
+  }
+
+  public synchronized int indexOf(Object o, int s) {
+    int i = s;
+    if (o == null) {
+      for (; i < elementCount; i++)
+        if (elementData[i] == null)
+          return i;
+    } else {
+      for (; i < elementCount; i++)
+        if (o.equals(elementData[i]))
+          return i;
+    }
+    return -1;
+  }
+
+  public synchronized void removeElementAt(int index) {
+    int numMoved = elementCount - index - 1;
+    System.arraycopy(elementData, index + 1, elementData, index, numMoved);
+    elementData[--elementCount] = null;
+  }
+
   private void checkElementPosition(int index) {
     if (!isElementPosition(index))
       throw new IllegalArgumentException();
@@ -92,6 +129,9 @@ public class MyVector<E> {
   private boolean isElementPosition(int index) {
     return index >= 0 && index < elementCount;
   }
+
+
+
   public int size() {
     return elementCount;
   }
